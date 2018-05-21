@@ -11,6 +11,7 @@ lines = context.textFile("./hello_spark.py")
 words = lines.flatMap(lambda line: line.split())
 pairs = words.map(lambda word: (word, 1))
 result = pairs.reduceByKey(lambda a, b: a + b)
+
 result.foreach(print)
 
 
